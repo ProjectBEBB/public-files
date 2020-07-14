@@ -64,6 +64,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Manuscript Description -->
     <xs:element name="msDesc">
         <xs:complexType>
             <xs:sequence>
@@ -71,6 +73,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Manuscript Identifier -->
     <xs:element name="msIdentifier">
         <xs:complexType>
             <xs:sequence>
