@@ -108,6 +108,8 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+    
+    <!-- History -->
     <xs:element name="history">
         <xs:complexType>
             <xs:sequence>
@@ -115,6 +117,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Origin -->
     <xs:element name="origin">
         <xs:complexType>
             <xs:sequence>
@@ -122,6 +126,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Date -->
     <xs:element name="date">
         <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -129,6 +135,8 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+    
+    <!-- Profile Desciption -->
     <xs:element name="profileDesc">
         <xs:complexType>
             <xs:sequence>
@@ -136,6 +144,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Correspondence Description -->
     <xs:element name="correspDesc">
         <xs:complexType>
             <xs:sequence>
@@ -143,12 +153,15 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Correspondence Action -->
     <xs:element name="correspAction">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="tei:persName"/>
             </xs:sequence>
             <xs:attribute name="type">
+                <!-- attribute type is either "sent" or "recieved" -->
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="sent"/>
@@ -158,6 +171,8 @@
             </xs:attribute>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Person Name -->
     <xs:element name="persName">
         <xs:complexType>
             <xs:simpleContent>
@@ -165,6 +180,7 @@
                     <xs:attribute name="key">
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
+                                <!-- Matches either "no_GND" or a GND of type "(DE-588)117589136" -->
                                 <xs:pattern value="(no_GND)|(\(DE-\d{3}\)\d{9})"/>
                             </xs:restriction>
                         </xs:simpleType>
@@ -173,6 +189,10 @@
             </xs:simpleContent>
         </xs:complexType>
     </xs:element>
+    
+    <!-- ********************   Facsimile   ************************ -->
+    
+    <!-- Facsimiles -->
     <xs:element name="facsimile">
         <xs:complexType>
             <xs:sequence>
@@ -185,6 +205,34 @@
             <xs:attribute name="url" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="text"/>
+    
+    <!-- ********************   Text   ************************ -->
+    
+    <!-- Text -->
+    <xs:element name="text">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:body"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Body -->
+    <xs:element name="body">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="tei:p"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Paragraph -->
     <xs:element name="p"/>
+    
+    
+    
+    
+    <!-- TODO: add content restrictions to p tag -->
+    
+    
 </xs:schema>
