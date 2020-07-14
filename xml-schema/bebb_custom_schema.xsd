@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+
+    <!-- root element -->
+    <xs:element name="TEI">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:teiHeader"/>
+                <xs:element ref="tei:facsimile"/>
+                <xs:element ref="tei:text"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- ********************   TEI Header   ************************ -->
+    
+    <!-- TEI Header -->
+    <xs:element name="teiHeader">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:fileDesc"/>
+                <xs:element ref="tei:profileDesc"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- File Description -->
+    <xs:element name="fileDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:titleStmt"/>
+                <xs:element ref="tei:publicationStmt"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Title Statement -->
+    <xs:element name="titleStmt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:title"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Title -->
+    <xs:element name="title" type="xs:string"/>
+    
+    <!-- Publication Statement -->
+    <xs:element name="publicationStmt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:p"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Source Description -->
+    <xs:element name="sourceDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:msDesc"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="msDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:msIdentifier"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="msIdentifier">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:repository"/>
+                <xs:element ref="tei:altIdentifier"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="repository" type="xs:string"/>
+    <xs:element name="altIdentifier">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:idno"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="idno">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="\d{9}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="history"/>
+    <xs:element name="profileDesc"/>
+    <xs:element name="facsimile"/>
+    <xs:element name="text"/>
+    <xs:element name="p"/>
+</xs:schema>
