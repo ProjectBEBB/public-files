@@ -212,7 +212,7 @@
     <xs:element name="text">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tei:front"/>
+                <xs:element ref="tei:front" minOccurs="0" maxOccurs="1"/>
                 <xs:element ref="tei:body"/>
             </xs:sequence>
         </xs:complexType>
