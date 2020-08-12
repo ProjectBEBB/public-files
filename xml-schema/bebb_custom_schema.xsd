@@ -108,7 +108,7 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
-    
+
     <!-- History -->
     <xs:element name="history">
         <xs:complexType>
@@ -117,7 +117,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Origin -->
     <xs:element name="origin">
         <xs:complexType>
@@ -126,7 +126,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Date -->
     <xs:element name="date">
         <xs:simpleType>
@@ -135,7 +135,7 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
-    
+
     <!-- Profile Desciption -->
     <xs:element name="profileDesc">
         <xs:complexType>
@@ -144,7 +144,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Correspondence Description -->
     <xs:element name="correspDesc">
         <xs:complexType>
@@ -153,7 +153,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Correspondence Action -->
     <xs:element name="correspAction">
         <xs:complexType>
@@ -171,7 +171,7 @@
             </xs:attribute>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Person Name -->
     <xs:element name="persName">
         <xs:complexType>
@@ -189,9 +189,9 @@
             </xs:simpleContent>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- ********************   Facsimile   ************************ -->
-    
+
     <!-- Facsimiles -->
     <xs:element name="facsimile">
         <xs:complexType>
@@ -205,19 +205,27 @@
             <xs:attribute name="url" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- ********************   Text   ************************ -->
-    
+
     <!-- Text -->
     <xs:element name="text">
         <xs:complexType>
             <xs:sequence>
+                <xs:element ref="tei:front"/>
                 <xs:element ref="tei:body"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Body -->
+    <xs:element name="front">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:note"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="body">
         <xs:complexType>
             <xs:sequence>
@@ -225,14 +233,15 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Paragraph -->
+    <xs:element name="note"/>
     <xs:element name="p"/>
-    
-    
-    
-    
+
+
+
+
     <!-- TODO: add content restrictions to p tag -->
-    
-    
+
+
 </xs:schema>
