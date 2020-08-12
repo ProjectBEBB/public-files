@@ -218,7 +218,7 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- Body -->
+    <!-- Front -->
     <xs:element name="front">
         <xs:complexType>
             <xs:sequence>
@@ -226,6 +226,8 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Body -->
     <xs:element name="body">
         <xs:complexType>
             <xs:sequence>
@@ -233,15 +235,14 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
+  
     <!-- Paragraph -->
-    <xs:element name="note"/>
     <xs:element name="p"/>
 
-
-
+    <!-- Note -->
+    <xs:element name="note"/>
 
     <!-- TODO: add content restrictions to p tag -->
-
+    <!-- TODO: add content restrictions to note tag -->
 
 </xs:schema>
