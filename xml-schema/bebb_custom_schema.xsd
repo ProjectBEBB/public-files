@@ -29,6 +29,7 @@
     <xs:element name="fileDesc">
         <xs:complexType>
             <xs:sequence>
+                <xs:element ref="tei:editionStmt"/>
                 <xs:element ref="tei:titleStmt"/>
                 <xs:element ref="tei:publicationStmt"/>
                 <xs:element ref="tei:sourceDesc"/>
@@ -56,15 +57,39 @@
     </xs:element>
 
     <!-- Publication Statement -->
+    <xs:element name="editionStmt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:edition"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="edition" type="xs:string"/>
     <xs:element name="publicationStmt">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tei:p"/>
+                <xs:element ref="tei:availability"/>
+                <xs:element ref="tei:pubPlace"/>
+                <xs:element ref="tei:publisher"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <!-- Source Description -->
+    <xs:element name="publisher" type="xs:string"/>
+    <xs:element name="pubPlace" type="xs:string"/>
+    <xs:element name="availability">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:license"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="license">
+        <xs:complexType mixed="true">
+            <xs:attribute name="target"/>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="sourceDesc">
         <xs:complexType>
             <xs:sequence>
