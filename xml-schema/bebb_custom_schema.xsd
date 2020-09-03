@@ -226,16 +226,16 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <!-- Body -->
     <xs:element name="body">
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" ref="tei:p"/>
+                <xs:element maxOccurs="1" ref="tei:div" minOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-  
+
     <!-- Paragraph -->
     <xs:element name="p"/>
 
@@ -244,5 +244,18 @@
 
     <!-- TODO: add content restrictions to p tag -->
     <!-- TODO: add content restrictions to note tag -->
-
+    <xs:element name="div">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
+            </xs:sequence>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="letter"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
