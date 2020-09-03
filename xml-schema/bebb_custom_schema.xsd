@@ -47,7 +47,7 @@
 
     <!-- Title -->
     <xs:element name="title">
-        <xs:complexType>
+        <xs:complexType mixed="true">
             <xs:sequence>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:title"/>
             </xs:sequence>
