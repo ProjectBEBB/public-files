@@ -181,7 +181,7 @@
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
                                 <!-- Matches either "no_GND" or a GND of type "(DE-588)117589136" -->
-                                <xs:pattern value="(no_GND)|(\(DE-\d{3}\)\d{9})"/>
+                                <xs:pattern value="(\(DE-\d{3}\)\d{9})"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>
