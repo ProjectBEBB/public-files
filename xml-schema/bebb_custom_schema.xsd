@@ -81,11 +81,11 @@
     <xs:element name="availability">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tei:license"/>
+                <xs:element ref="tei:licence"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="license">
+    <xs:element name="licence">
         <xs:complexType mixed="true">
             <xs:attribute name="target"/>
         </xs:complexType>
