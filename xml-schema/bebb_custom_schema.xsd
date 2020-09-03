@@ -46,7 +46,13 @@
     </xs:element>
 
     <!-- Title -->
-    <xs:element name="title" type="xs:string"/>
+    <xs:element name="title">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:title"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <!-- Publication Statement -->
     <xs:element name="publicationStmt">
