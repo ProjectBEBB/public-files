@@ -255,7 +255,7 @@
     <xs:element name="front">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tei:div00"/>
+                <xs:element ref="tei:div0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -291,7 +291,7 @@
             </xs:attribute>
         </xs:complexType>
     </xs:element>
-    <xs:element name="div00">
+    <xs:element name="div0">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="tei:head"/>
@@ -300,5 +300,5 @@
             <xs:attribute ref="tei:type"/>
         </xs:complexType>
     </xs:element>
-    <xs:attribute name="type"> </xs:attribute>
+    <xs:attribute name="type"/>
 </xs:schema>
