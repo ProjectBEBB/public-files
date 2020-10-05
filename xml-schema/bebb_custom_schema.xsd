@@ -264,7 +264,6 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:head"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
             </xs:sequence>
-            <xs:attribute ref="tei:type"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="head"/>
