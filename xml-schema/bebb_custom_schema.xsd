@@ -290,15 +290,15 @@
             <xs:sequence>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
             </xs:sequence>
-            <xs:attribute name="type">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="letter"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
+            <xs:attribute ref="tei:type"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="note"/>
-    <xs:attribute name="type"/>
+    <xs:attribute name="type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="letter"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
 </xs:schema>
