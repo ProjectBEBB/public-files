@@ -297,7 +297,14 @@
                 <xs:element ref="tei:head"/>
                 <xs:element ref="tei:p"/>
             </xs:sequence>
-            <xs:attribute name="type" type="xs:string"/>
+            <xs:attribute ref="tei:type"/>
         </xs:complexType>
     </xs:element>
+    <xs:attribute name="type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="letter"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
 </xs:schema>
