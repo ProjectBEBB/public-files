@@ -251,7 +251,6 @@
     </xs:element>
 
     <!-- Front -->
-    <xs:element name="head"/>
     <xs:element name="front">
         <xs:complexType>
             <xs:sequence>
@@ -259,8 +258,19 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    <xs:element name="div0">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:head"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
+            </xs:sequence>
+            <xs:attribute ref="tei:type"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="head"/>
 
     <!-- Body -->
+    <xs:element name="p"/>
     <xs:element name="body">
         <xs:complexType>
             <xs:sequence>
@@ -270,10 +280,8 @@
     </xs:element>
 
     <!-- Paragraph -->
-    <xs:element name="p"/>
 
     <!-- Note -->
-    <xs:element name="note"/>
 
     <!-- TODO: add content restrictions to p tag -->
     <!-- TODO: add content restrictions to note tag -->
@@ -291,14 +299,6 @@
             </xs:attribute>
         </xs:complexType>
     </xs:element>
-    <xs:element name="div0">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:head"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
-            </xs:sequence>
-            <xs:attribute ref="tei:type"/>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="note"/>
     <xs:attribute name="type"/>
 </xs:schema>
