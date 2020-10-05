@@ -251,11 +251,11 @@
     </xs:element>
 
     <!-- Front -->
+    <xs:element name="head"/>
     <xs:element name="front">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tei:div"/>
-                <xs:element ref="tei:note"/>
+                <xs:element ref="tei:div00"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -289,6 +289,15 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="div00">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:head"/>
+                <xs:element ref="tei:p"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
