@@ -300,11 +300,5 @@
             <xs:attribute ref="tei:type"/>
         </xs:complexType>
     </xs:element>
-    <xs:attribute name="type">
-        <xs:simpleType>
-            <xs:restriction base="xs:string">
-                <xs:enumeration value="letter"/>
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="type"> </xs:attribute>
 </xs:schema>
