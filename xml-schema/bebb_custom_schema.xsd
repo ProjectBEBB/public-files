@@ -268,20 +268,16 @@
     <!-- Note -->
     <xs:element name="note"/>
 
-    <!-- TODO: add content restrictions to p tag -->
-    <!-- TODO: add content restrictions to note tag -->
     <xs:element name="div">
         <xs:complexType>
             <xs:sequence>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
             </xs:sequence>
-            <xs:attribute name="type">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="letter"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
+            <xs:attribute name="type"/>
         </xs:complexType>
     </xs:element>
+
+    <!-- TODO: add content restrictions to p tag -->
+    <!-- TODO: add content restrictions to note tag -->
+
 </xs:schema>
