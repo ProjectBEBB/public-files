@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.tei-c.org/ns/1.0"
+    xmlns:tei="http://www.tei-c.org/ns/1.0">
 
     <!-- root element -->
     <xs:element name="TEI">
@@ -254,6 +254,7 @@
     <xs:element name="front">
         <xs:complexType>
             <xs:sequence>
+                <xs:element ref="tei:div"/>
                 <xs:element ref="tei:note"/>
             </xs:sequence>
         </xs:complexType>
