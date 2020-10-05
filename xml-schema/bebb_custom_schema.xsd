@@ -254,11 +254,11 @@
     <xs:element name="front">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="tei:div0"/>
+                <xs:element ref="tei:div1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="div0">
+    <xs:element name="div1">
         <xs:complexType>
             <xs:sequence>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:head"/>
