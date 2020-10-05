@@ -251,22 +251,7 @@
     </xs:element>
 
     <!-- Front -->
-    <xs:element name="front">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="tei:div1"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="div1">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:head"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
-            </xs:sequence>
-            <xs:attribute ref="tei:type"/>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="front"> </xs:element>
     <xs:element name="head"/>
 
     <!-- Body -->
