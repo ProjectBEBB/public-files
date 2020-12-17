@@ -1,3 +1,5 @@
+# Editionsrichtlinien der Basler Edition der Bernoulli-Briefwechsel (BEBB)
+
 Editionsrichtlinien:
 Was in der Basler Edition der Bernoulli-Briefwechsel ediert wird.
 
