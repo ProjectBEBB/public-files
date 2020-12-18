@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><!DOCTYPE TEI 
+    [
+    <!ENTITY % Menota_entities SYSTEM 'http://www.menota.org/menota-entities.txt'>
+    %Menota_entities; ]>
+<TEI xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Editorische Richtlinien der BEBB</title>
+            <author>Fritz Nagel, Sulamith Gehr, David Mache, Margareth Warburton, Simon Waldner</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Editorisches Konzept und Richtlinien zu Transkription, Textkonstitution und
+               Kommentierung der Bernoulli-Briefwechsel in TEI XML.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Die folgenden Richtlinien orientieren sich an den Richtlinien der gedruckten
+               Briefbände der Bernoulli-Edition und jenen des online publizierten Bernoulli-Wiki und
+               wurden im Hinblick auf die aktuelle Überführung der BEBB in eine digitale Edition
+               basierend auf TEI XML aktualisiert.</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <head>Fritz Nagel, Sulamith Gehr, David Mache, Margareth Warburton, Simon Waldner</head>
+         <p>Editorisches Konzept und Richtlinien zu Transkription, Textkonstitution und
+            Kommentierung der Bernoulli-Briefwechsel.</p>
+
+      </front>
+      <body>
+         <div1>
+            <head>Editionskonzept</head>
+
+            <div2>
+               <head>Gegenstand der Edition</head>
+               <p>Die Basler Edition der Bernoulli-Briefwechsel (BEBB) ediert die Briefwechsel von
+                  Daniel I Bernoulli (1700-1782), Daniel II Bernoulli (1759-1789), Jacob I Bernoulli
+                  (1654-1705), Jacob II Bernoulli (1759-1789), Johann I Bernoulli (1667-1748),
+                  Johann II Bernoulli (1710-1790), Nicolaus I Bernoulli (1687-1759), Nicolaus II
+                  Bernoulli (1695-1726) und Jacob Hermann (1678-1733).</p>
+               <p>Von den ca. 5400 erhaltenen Briefen der Mathematiker Bernoulli werden jene von der
+                  BEBB ediert, die nicht von der Bernoulli-Edition in Buchform veröffentlicht wurden
+                  (dazu gehört der Briefwechsel von Jacob I Bernoulli) oder deren Edition als
+                  Bestandteil der Euler- und Leibniz-Edition geplant wurde. Die Priorisierung der zu
+                  edierenden Texte richtet sich nach deren Bedeutung für die aktuelle
+                  wissenschaftshistorische Forschung, nach der Zugänglichkeit der zu edierenden
+                  Materialien und danach, ob die Texte publiziert wurden.</p>
+               <p>Diese Briefe sind im <ref
+                     target="https://ub.unibas.ch/bernoulli/index.php/Suche_im_Bibliothekskatalog"
+                     >BIBB</ref>, einem Teil des Handschriftenkatalogs der Universitätsbibliothek
+                  Basel erfasst. </p>
+            </div2>
+            <div2>
+               <head>Editionsprinzipien</head>
+               <div3>
+                  <head>Textbasis</head>
+                  <p>Die BEBB ist eine wissenschaftlich-kritische Edition. Die Textkonstitution
+                     erfolgt anhand eines einzigen Textzeugen. Falls ein Brief in unterschiedlichen
+                     Varianten überliefert ist, dient die Abfertigung (die für den Adressaten
+                     bestimmte Fassung, die in der Regel verschickt wurde) als Leithandschrift. Wo
+                     die Abfertigung nicht erhalten ist, wird diejenige Fassung verwendet, die der
+                     Abfertigung am nächsten steht. Diese kann Entwurf, Abschrift, Druck oder eine
+                     andere Fassung in der hier wiedergegebenen hierarchischen Reihenfolge sein. In
+                     Ausnahmefällen ist der Einbezug einer zweiten Textfassung zusätzlich zur
+                     Leithandschrift möglich, wenn sich diese Fassung inhaltlich von der
+                     Leithandschrift unterscheidet. </p>
+               </div3>
+               <div3>
+                  <head>Textkonstitution</head>
+                  <p>Ziel der Edition sind wissenschaftlich konstituierte und zitierfähige Texte.
+                     Ein wichtiger Teil der Arbeit ist deshalb die sorgfältige Überprüfung der
+                     Transkriptionen anhand der Briefmanuskripte und die wissenschaftlich fundierte
+                     Textkonstitution. Dabei gilt der Grundsatz einer möglichst textnahen Bewahrung
+                     ursprünglicher Schreibweisen. Die bei der Textkonstitution angewandten Regeln
+                     folgen weitgehend den früheren Phasen der BEBB. Einige textkritische Eingriffe
+                     wie z.B. die Auflösung von Ligaturen und Abbreviaturen werden ohne Auszeichnung
+                     im Text umgesetzt. Andere Eingriffe, wie Korrekturen von Schreibfehlern, werden
+                     mittels TEI Markup umgesetzt. Textkritische Annotationen in Fussnotenform
+                     dienen der Dokumentation und Erläuterung von Fällen, die  im gewählten TEI XML
+                     Markup nicht ausgezeichnet werden können. Die Einzelheiten dazu, was im TEI XML
+                     mit Markup ausgezeichnet wird, sind in den Editionsrichtlinien  festgehalten.
+                     In einer separaten Dokumentation wird anhand von Beispielen der verwendete TEI
+                     XML Code begleitet von Textstellen und Handschriftenauschnitten aus der Edition
+                     festgehalten.</p>
+                  <p>Die Brieftexte werden gemäss den von TEI-Konsortium als Möglichkeit gegebenen
+                     Briefbestandteilen strukturiert. </p>
+                  <p>Die mathematischen Formeln werden wie in den bisherigen Phasen der BEBB in
+                     LaTeX erfasst. Die Formeln werden möglichst in der ursprünglichen Schreibweise
+                     unter der Berücksichtigung der historischen Symbolsprache wiedergegeben.</p>
+                  <p>Innerhalb der Gruppe der dem Dokument nachträglich hinzugefügten Texten und
+                     Überarbeitungen werden ausschliesslich jene der Korrespondenten transkribiert,
+                     die die Korrespondenz und ihren Inhalt selbst betreffen (bisher in Fussnoten).
+                     Auf weitere Textebenen, die hauptsächlich die Rezeption oder Archivierung
+                     betreffen, wird in den Metadaten verwiesen; ausserdem werden sie durch hoch
+                     aufgelöste Briefdigitalisate sichtbar.</p>
+
+               </div3>
+               <div3>
+                  <head>Kommentierung</head>
+                  <p>Ziel der Kommentierung ist die inhaltliche Erschliessung des Textes.</p>
+                  <p>Die Grundkommentierung umfasst die Identifikation und Auszeichnung der im
+                     Brieftext erwähnten Personen, Institutionen, Publikationen, Manuskripte und
+                     Briefe. Ein Regest fasst die im Brief behandelten Themen zusammen und bildet
+                     die Grundlage für deren künftige Auszeichnung. Die Grundkommentierung erfolgt
+                     unter Angabe der unique identifiers dieser Entitäten. Auch die Briefseiten
+                     werden unter Angabe der eindeutigen Bild-IDs mit den IIIF-Faksimiles
+                     verlinkt.</p>
+                  <p>Sachkommentare dienen dazu, den historischen, wissenschaftlichen und
+                     biographischen Kontext, in dem der Text steht, für den Leser zu erschliessen.
+                     Stellenkommentare erfolgen in Fussnotenform, einleitende Texte hingegen als
+                     separates Dokument, das mit den Brieftexten intern verlinkt werden kann.</p>
+               </div3>
+               <div3>
+                  <head>Aufbau der Edition</head>
+                  <p>Die BEBB ist eine born-digital Edition und besteht aus unterschiedlichen intern
+                     und extern verknüpften Daten. Dies sind aktuell die Metadaten, Textdaten,
+                     Bilddaten (Faksimiles) und Strukturdaten (zu Briefen, Personen, Institutionen,
+                     Werken, Orten).</p>
+                  <p>Die Metadaten zu den Briefen befinden sich im Basler Inventar der
+                     Bernoulli-Briefwechsel (<ptr
+                        target="https://ub.unibas.ch/bernoulli/index.php/Suche_im_Bibliothekskatalog"
+                     />BIBB) als Teil des elektronischen Handschriftenkatalogs (<ptr
+                        target="https://ub2.unibas.ch/han/"/>HAN) der UB Basel. Eine vollständige
+                     Dokumentation der Datenbankstruktur und der im BIBB erfassten Daten ist in
+                     einer separaten Dokumentation geplant. Jeder Metadatensatz der BIBB ist mit
+                     einem unique identifier versehen. Ein Metadatenset wird regelmässig aus dem
+                     BIBB in die Header der TEI-XML-Briefdateien eingespielt.</p>
+                  <p>Im TEI Header der in TEI XML erfassten Briefdateien werden einerseits die
+                     Metadaten aus dem BIBB eingespielt und andererseits die Bearbeitungszustände
+                     erfasst. Im TEI Body steht die Brieftranskription samt Kommentartexten. Die
+                     XML-Dateien sind auf eXist-db-Servern abgelegt.</p>
+                  <p>Bilddateien befinden sich auf IIIF-Servern und verfügen über IIIF-Manifeste mit
+                     den für die Einbindung in die Edition benötigten Metadaten.</p>
+                  <p>Entitätsbezogene Daten sind in unterschiedlichen Datenbanken erfasst und mit
+                     unique identifiers versehen.</p>
+               </div3>
+               <div3>
+                  <head>Darstellung der Daten in der BEBB-Plattform</head>
+                  <p>Die BEBB ist eine nach dem Single-Source-Prinzip konzipierte Online-Edition.
+                     Das Aussehen der Edition wird in der BEBB-Plattform über die Webapplikation TEI
+                     Publisher gesteuert. Mittels der im edierten Text ausgezeichneten Elemente
+                     können mehrere Textansichten generiert werden.</p>
+               </div3>
+            </div2>
+            <div2>
+               <head>Einhaltung der <ref
+                     target="https://www.force11.org/group/fairgroup/fairprinciples"
+                  >FAIR</ref>-Prinzipien</head>
+               <p>Findable: Die Auffindbarkeit wird durch die Publikation auf der öffentlichen
+                  Plattform und die wiederauffindbarkeit durch die Verwendung von <hi rend="italic"
+                     >persistent identifiers</hi>  gewährleistet.</p>
+               <p>Accessible: Die Zugänglichkeit der Edition ist durch die Publikation der Daten
+                  online und Open Access unter <ref
+                     target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Licence,
+                     Version 4.0</ref> gewährleistet. Durch die geplante Integration der Daten in
+                  das <ref target="https://dasch.swiss/">DaSCH</ref> wird auch die
+                  Langzeitverfügbarkeit dieser Daten gewährleistet.</p>
+               <p>Interoperable: Die Interoperabilität ist durch die Anwendung von TEI XML unter
+                  Einbezug von Normdaten als Identifikatoren wie GND und GeoNames-IDs gegeben. Die
+                  Nutzung von eXist-db gewährt den Zugriff auf die Daten per RESTful API.</p>
+               <p>Reusable: Im Sinne des Open Access unterliegen alle Daten, die von der BEBB
+                  produziert werden, der <ref target="https://creativecommons.org/licenses/by/4.0/"
+                     >Creative Commons Licence, Version 4.0</ref>,  erscheinen <ref
+                     target="https://open-access.net/startseite">Open Access</ref> und sind
+                  dementsprechend frei wiederverwendbar. Ausserdem wird bei allen Daten und
+                  Metadaten deren Herkunft ersichtlich oder explizit angeführt.</p>
+            </div2>
+            <div2>
+               <head>Legacy data</head>
+               <p>Daten, die aus älteren Phasen der BEBB stammen, werden im Hinblick auf die
+                  Integration in die neue online-Plattform der BEBB lediglich soweit angepasst, dass
+                  sie mit den restlichen Briefen einheitlich prozessiert werden können
+                  (Transformation in TEI XML). Das bedeutet, dass sich die in der BEBB-Plattform
+                  befindlichen Texte aufgrund der Zugehörigkeit zu bestimmten legacy data-Gruppen
+                  auch hinsichtlich dem Editionskonzept und den Editionsregeln unterscheiden können.
+                  Für die legacy data gelten die Richtlinien, die bei deren Erstellung befolgt
+                  wurden. Diese Richtlinien resp. editorische Vorbemerkungen werden deshalb auf der
+                  online-Plattform zusammen mit den legacy data veröffentlicht.</p>
+            </div2>
+
+         </div1>
+
+         <div1>
+            <head>Editionsrichtlinien</head>
+            <div2>
+               <head>Auszeichnung der Briefstruktur</head>
+               <p>Der Brief wird strukturiert ausgezeichnet. Folgende Strukturelemente können,
+                  müssen aber nicht auftreten:</p>
+               <list rend="numbered">
+                  <item>Brieferöffnung <list rend="bulleted">
+                        <item>Ort, Datum</item>
+                        <item>Anrede</item>
+                     </list></item>
+                  <item>Brieftext</item>
+                  <item>Briefschluss <list rend="bulleted">
+                        <item>Höflichkeits- und Grussformeln</item>
+                        <item>Unterschrift</item>
+                        <item>Ort, Datum</item>
+                     </list></item>
+                  <item>Postscripta</item>
+                  <item>Adresse</item>
+               </list>
+               <note>Welches Markup soll verwendet werden für die Auszeichnung von Orten und Namen
+                  in Brieferöffnung und Briefschluss sowie Adresse?</note>
+            </div2>
+            <div2>
+               <head>Auszeichnung von Seitenbeginn, Absätzen und Zeilenbeginn</head>
+               <list rend="numbered">
+                  <item>Der Anfang einer Manuskriptseite wird in der Transkription markiert. Die
+                     Stelle wird mit dem Identifikator des entsprechenden Bildes der
+                     Handschriftenseite ausgezeichnet.<note>Ob die Verlinkung der Faksimileseiten
+                        nicht innerhalb einer Formel angebracht werden darf, wird nach der
+                        bewerkstelligten Integration von mathjax in TEI Publisher geklärt
+                        sein.</note></item>
+                  <item>Absätze in der Vorlage werden übernommen und ausgezeichnet. Auch
+                     Textgliederungen, die als Absätze zu interpretieren sind, z. B. breite
+                     Zeilenabstände oder breite Lücken in einer Zeile, werden als Absätze
+                     wiedergegeben.</item>
+                  <item>Der Zeilenbeginn der Vorlage wird ausgezeichnet.</item>
+                  <item>Gedichte werden als "linegroup" ausgezeichnet. Innerhalb der Auszeichnung
+                     werden die einzelnen Zeilen als "line" ausgezeichnet.</item>
+                  <item>Weiser resp. Kustoden werden nicht transkribiert.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Satzzeichen und Abkürzungspunkte</head>
+               <p>Satzzeichen werden nach Möglichkeit originalgetreu beibehalten.</p>
+               <list rend="numbered">
+                  <item>Fehlende Punkte an Satz- oder Absatzenden werden normalisierend ergänzt.
+                     Dies gilt auch für die Schlussformel eines Briefes, falls der Brief ohne
+                     Signatur endet.</item>
+                  <item>Doppelpunkte bei Abkürzungen werden zu einem Punkt normalisiert.</item>
+                  <item>Bei Abkürzungen wird ein fehlender Abkürzungspunkt ergänzt.</item>
+                  <item>Bei Hochstellungen wird der Abkürzungspunkt vor der Hochstellung
+                     gesetzt.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Trennungen und Bindestriche</head>
+               <list rend="numbered">
+                  <item>Ein "=" mit der Funktion eines Bindestrichs wird stillschweigend zu "-"
+                     angepasst.</item>
+                  <item>Worttrennungen am Zeilenende der Vorlage werden ausgezeichnet.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Gross- und Kleinschreibung</head>
+               <list rend="numbered">
+                  <item>Beginnt ein Satz nach Satzpunk oder Doppelpunkt mit einer Minuskel, wird
+                     diese zu einer Majuskel stillschweigend angepasst. Nach Fragezeichen,
+                     Ausrufezeichen oder Semikolon wird hinsichtlich Gross- und Kleinschreibung
+                     keine Anpassung vorgenommen.</item>
+                  <item>Der Beginn der Datumsangabe wird nur dann zu einer Majuskel angepasst, wenn
+                     es sich um einen vollständigen Satz handelt (z.B. "à Bâle le ..." wird
+                     belassen).</item>
+                  <item>Werktitel beginnen immer mit einer Majuskel: Das heisst, bei Beispielen wie
+                     "ars conjectandi" oder "journal des sçavants" erfolgt eine Normalisierung zu
+                     "Ars conjectandi" resp. zu "Journal des sçavants". Dies gilt auch für
+                     abgekürzte Titel identifizierbarer Zeitschriften, so wird "actes" für "Acta
+                     eruditorum" zu "Actes" normalisiert.</item>
+                  <item>Kleingeschriebene Anfangsbuchstaben von Eigennamen (Personen, Länder, Orte,
+                     Flüsse, Hausnamen etc.) werden zu Majuskeln normalisiert. Bei adjektivischem
+                     Gebrauch von Eigennamen wird die jeweilige Schreibung der Vorlage
+                     beibehalten.</item>
+                  <item>Bei intermediären Buchstabenformen wird die Gross- und Kleinschreibung mit
+                     der zu erwartenden Form wiedergegeben.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Zahlzeichen</head>
+               <list rend="numbered">
+                  <item>Arabische und römische Zahlzeichen werden vorlagengetreu
+                     wiedergegeben.</item>
+                  <item>Punkte hinter Kardinalzahlen werden mit dem Normalisierungstag getilgt,
+                     hinter Ordinalzahlen beibehalten.</item>
+                  <item>Fehlende Hochstellungen in gängigen Abkürzungen für Ordinalzahlen werden
+                     angepasst: z.B. "1.o" als "1.<hi rend="superscript">o</hi>".</item>
+                  <item>Haben Punkte eine Trennungsfunktion, wie z. B. bei Aufzählungen und
+                     bibliographischen Angaben in den Texten, werden sie zu Kommas angepasst.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Formeln</head>
+               <p>Dieser Abschnitt lässt sich erst fertigstellen, wenn MathJax in den TEI Publisher
+                  integriert ist. Diese Integration ist in Planung/Auftrag bei eXist Solutions.
+                  Solange noch nicht getestet werden kann, wie der TEI Publisher mit der Darstellung
+                  der mathematischen Formeln umgeht ("was er im XML als Input braucht") können wir
+                  noch nicht festlegen, wie wir ebendiesen Input aufbereiten müssen. &lsqb;MW,
+                  26.11.2020&rsqb;</p>
+               <p>Die Auszeichnung dient dazu, einerseits die Formeln vorlagengetreu aufzunehmen,
+                  editorische Eingriffe zu erlauben und dokumentieren, und den Inhalt so zu
+                  kodieren, dass er mathematisch korrekt gerendert werden kann.</p>
+               <p>Es folgt der bisherige (in Arbeit befindliche) Stand dieses Kapitels.</p>
+               <list rend="numbered">
+                  <item>Mathematische Formeln und Buchstaben, die mathematische Grössen (Variablen
+                     oder Punkte) bezeichnen werden als Formeltext ausgezeichnet und in LaTeX-Code
+                     erfasst. Durch die Integration von MathJax in TEI Publisher werden sie im
+                     Webbrowser graphischdargestellt. </item>
+                  <item>Die Gestaltung von mathematischen Formeln folgt möglichst getreu der
+                     Vorlage, d.h. Formeln werden unter Beachtung der historischen Symbol- und
+                     Formelschreibweise transkribiert. (Beispiele: <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->aa</formula>
+                     statt <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->a^2</formula>,
+                     Vinculum statt Klammern, verschiedene Multiplikationszeichen, Symbole zur
+                     Bezeichnung geometrischer Figuren, von Verhältnissen, Proportionen
+                     etc.).</item>
+                  <item>Bezeichnungen für Operatoren (wie «q» für «quadratum», «L» für «logarithmus»
+                     oder «n» für «numerus» - die Umkehrfunktion des Logarithmus) werden innerhalb
+                     von Formeln in gerader Schrift wiedergegeben, um sie von Variablen oder Punkten
+                     zu unterscheiden . Wo der Logarithmus mit einer Minuskel bezeichnet ist, wird
+                     diese als rundes «<formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\ell</formula>»
+                     wiedergegeben.</item>
+                  <item>Bei Brüchen stehen in der Vorlage die Zeichen + und - öfters nicht vor dem
+                     Bruchstrich, sondern auf der Höhe des Zählers. In diesem Fall werden sie nach
+                     heutigem Gebrauch vor den Bruchstrich gesetzt. </item>
+                  <item>Das Vinculum, ein über einem Term angebrachter Querstrich mit der Funktion
+                     einer Klammer, wird beibehalten; doch wird die Länge der Überstreichung, die in
+                     den handschriftlichen wie den gedruckten Quellen oft ungenau oder falsch
+                     gesetzt ist, präzisiert. </item>
+                  <item>Das Wurzelzeichen ohne Balken <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\sqrt{}</formula>
+                     wird bei Radikanden, die nur aus einer einzigen Zahl oder einer Variablen
+                     bestehen, beibehalten. Ein Vinculum über den Radikanden wird dem modernen
+                     Gebrauch entsprechend mit dem Wurzelzeichen verbunden (Beispiel <formula
+                        notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\overline{x~+~y}~\sqrt{}~\overline{a~+~b}</formula>
+                     wird als <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\overline{x~+~y}\:\sqrt{a~+~b}</formula>
+                     wiedergegeben).</item>
+                  <item>Bei Polynomen sind gelegentlich die Koeffizienten derselben Potenz einer
+                     Variablen in einer Spalte untereinander angeordnet. Fehlt dabei eine Potenz, so
+                     wird an deren Stelle das Zeichen * gesetzt.</item>
+                  <item>Die alte Schreibweise <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->a~.~b~::~x~.~y</formula>
+                     für die Proportionen <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->a~:~b~=~x~:~y</formula>
+                     wird beibehalten. Oft bezeichnen dabei Klammern die Gleichheit von Termen, und
+                     die vierte Proportionale wird direkt ausgerechnet. Zum Beispiel fasst die
+                     Formel <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->a~(AB)~.~b~(BC)~::~x~(PQ)~.~y~(PR)~=~bx/a</formula>
+                     die Proportion <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->a~:~b~=~x~:~y</formula>
+                     mit den Voraussetzungen <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->a~=~AB,
+                        b~=~BC, x~=~PQ</formula>, <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->y~=~PR</formula>
+                     und der Folgerung <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->y~=~bx/a</formula>
+                     zusammen.</item>
+                  <item>Die Zeichen <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\square</formula>
+                     (Quadrat), <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\bigcirc</formula>
+                     (Kreis), <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\bigtriangleup</formula>
+                     (Dreieck), <formula notation="none"
+                        ><!--ToDo: Notatation still preliminary! tex-notation with $-signs? -->\angle</formula> (Winkel),
+                     die sowohl für geometrische Objekte wie für deren Masszahlen stehen, werden
+                     beibehalten.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Figuren und Abbildungen</head>
+               <p>Dieses Kapitel lässt sich abschliessend überarbeiten, sobald klar ist, wie wir
+                  einzelne Bildausschnitte ausweisen und ansprechen können.</p>
+            </div2>
+            <div2>
+               <head>Beilagen</head>
+               <p>Bei Beilagen handelt es sich um erhaltene oder nur im Text erwähnte Dokumente
+                  handschriftlicher oder gedruckter Natur.</p>
+               <p>Handschriftliche, mit dem Brieftext erhaltene Beilagen werden möglichst ediert.
+                  Dies erfolgt in einem separaten TEI XML-Dokument, auf das im Brieftext verwiesen
+                  wird.</p>
+            </div2>
+            <div2>
+               <head>Normalisierung von Sonderzeichen und diakritischen Zeichen</head>
+               <p>Sonderzeichen und diakritische Zeichen werden je nach Sprache unterschiedlich
+                  behandelt und normalisiert. Fehlende i-Punkte und j-Punkte werden in allen
+                  Sprachen stillschweigend ergänzt. </p>
+               <div3>
+                  <head>Lateinische Texte. Normalisierungen in lateinischen Texten erfolgen
+                     stillschweigend.</head>
+                  <list rend="numbered">
+                     <item>Die et-Ligatur "&amp;" wird zu "et" normalisiert.</item>
+                     <item>Die Buchstaben i/j werden vorlagengetreu transkribiert (z. B. hujus/huius
+                        oder Jus/Ius).</item>
+                     <item>v/V und u/U werden entsprechend ihrem Lautwert normalisiert (z. B. aus
+                        "vniuersalis" wird "universalis").</item>
+                     <item>Die Ligaturen "æ" und "œ" werden zu "ae" bzw. "oe" normalisiert.</item>
+                     <item>Akzente werden normalisierend getilgt.</item>
+                     <item>Ein Trema über einem Buchstaben wird entsprechend der Vorlage
+                        beibehalten. Nötigenfalls wird ein fehlendes Trema gesetzt, falls ein
+                        Bedeutungsunterschied anzuzeigen ist.</item>
+                  </list>
+               </div3>
+               <div3>
+                  <head>Französische Texte</head>
+                  <list rend="numbered">
+                     <item>Die et-Ligatur "&amp;" wird zu "et" normalisiert.</item>
+                     <item>Der Anfangsbuchstabe "i" wird gegebenenfalls nach seinem Lautwert als "j"
+                        normalisiert wiedergegeben (aus "ie" wird z. B. "je").</item>
+                     <item>Die Ligatur "œ" wird nicht aufgelöst.</item>
+                     <item>In französischen Wörtern werden die Akzente vorlagengetreu transkribiert.
+                        Ausnahmen bilden die Accent grave am Ende eines Wortes, die nach heutigem
+                        Gebrauch mit Accents aigus normalisiert werden.</item>
+                     <item>Nicht eindeutig geschriebene Akzente werden nach heutigen Regeln
+                        wiedergegeben.</item>
+                     <item>Fehlende Akzente werden nicht ergänzt. Ausnahmen: Akzente mit
+                        Unterscheidungsfunktion (auf "à", "là", "où", "sûr" oder z. B. bei
+                        Partizip-Formen von Verben wie "gardé") werden, wo nötig, ergänzt.</item>
+                     <item>Fehlende Apostrophe werden in der Regel ergänzt. Ausnahmen bilden z. B.
+                        veraltete aber unmissverständliche Formen wie aujourdhui oder dabord.</item>
+                     <item>Fehlende cédilles werden nicht ergänzt, nach heutigem Gebrauch
+                        überflüssige werden vorlagengetreu beibehalten.</item>
+                  </list>
+               </div3>
+               <div3>
+                  <head>Deutsche Texte</head>
+                  <list rend="numbered">
+                     <item>Die et-Ligatur "&amp;" wird zu "und" normalisiert.</item>
+                     <item> i/j und I/J werden in deutschen Wörtern entsprechend ihrem Lautwert
+                        transkribiert (z. B. aus "dieienige" wird "diejenige", aus "Jch" wird
+                        "Ich").</item>
+                     <item>v/V und u/U werden entsprechend ihrem Lautwert wiedergegeben (z. B. aus
+                        "Vniuersität" wird "Universität").</item>
+                     <item>In deutschen Wörtern werden diakritische Zeichen weitgehend
+                        beibehalten.</item>
+                     <item>Die Distinktionszeichen über "u" und "y" ("u&combcurlbar;" und "ÿ")
+                        werden getilgt.</item>
+                  </list>
+               </div3>
+            </div2>
+            <div2>
+               <head>Auszeichnung von Verschreibern, Durchstreichungen und Einfügungen</head>
+               <list rend="numbered">
+                  <item>Kleinere Schreibfehler, bspw. Metathesen, werden korrigierend
+                     ausgezeichnet.</item>
+                  <item>Schreibfehler im Text, die ohne Korrektur das Verständnis des Inhalts
+                     verunmöglichen, werden sowohl korrigiert als auch in einer Fussnote
+                     erläutert.</item>
+                  <item>Schreibfehler, die sich über längere Passagen verteilen, bspw. bei einem
+                     Korrespondenten, der in einer Fremdsprache schreibt, die er nicht vollständig
+                     beherrscht, werden in einer editorischen Vorbemerkung kommentiert.</item>
+                  <item>Falsch geschriebene Namen werden in der Regel nicht korrigiert, sondern über
+                     die Personenauszeichnung eindeutig erschlossen.</item>
+                  <item>Durchstreichungen, Löschungen und/oder Hinzufügungen, also Korrekturen des
+                     Korrespondenten selbst, werden nur bei erkennbar inhaltlichen Auswirkungen auf
+                     den Brieftext als solche ausgezeichnet.</item>
+               </list>
+               <p>Zur Zeit noch nicht abschliessbar ist  folgender Punkt:</p>
+               <list rend="numbered">
+                  <item>Bisher: Schreibfehler in Formeln werden korrigiert und zusätzlich in einer
+                     Fussnote kommentiert. Zukünftig: Abhängig von MathJax-Umsetzung.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Abkürzungen und Abbreviaturen</head>
+               <p>Abkürzungen werden nicht ausgezeichnet, sie werden in einem Abkürzungsverzeichnis
+                  erfasst und aufgelöst und, wenn sinnvoll, erläutert. Abkürzungen, die selten
+                  vorkommen, werden in einer Fussnote aufgelöst und übersetzt.</p>
+            </div2>
+            <div2>
+               <head>Textverluste und Konjekturen</head>
+               <list rend="numbered">
+                  <item>Textverluste oder unleserliche Stellen werden ausgezeichnet, wenn sie eine
+                     erkennbare inhaltliche Auswirkung auf den Brieftext haben.</item>
+                  <item>Umfangreichere Textverluste werden gegebenenfalls in einer Fussnote
+                     erläutert.</item>
+                  <item>Konjekturen werden als solche mit Markup umfasst in den Text eingefügt.
+                     Falls erforderlich werden sie in einer Fussnote begründet.</item>
+                  <item>Fehlende oder erschlossene Datumsangaben werden in den Metadaten (BIBB)
+                     erfasst.</item>
+               </list>
+
+            </div2>
+            <div2>
+               <head>Zitate</head>
+               <p>Zitate treten in den Korrespondenzen verschieden auf. Dabei stammen sie unter
+                  anderem aus:</p>
+               <list rend="bulleted">
+                  <item>wissenschaftlicher Literatur</item>
+                  <item>klassischer Literatur</item>
+                  <item>der Bibel</item>
+                  <item>Briefen</item>
+                  <item>kontemporärer Literatur</item>
+               </list>
+               <p>Wenn es sich um zitierte Textpassagen handelt, können diese mit oder ohne Angabe
+                  der Quelle auftreten. Bei wissenschaftlichen Zitaten kann der Literaturverweis
+                  eigenständig auftreten, wörtliche Passagen oder Paraphrasen indizieren.</p>
+               <p>Die Zitate werden in ihrem Umfang ausgezeichnet und, wo möglich, bibliographisch
+                  referenziert. Bei zitierten Textpassagen werden dabei graphisch hervorgehobene,
+                  wortgetreue Zitate als "quoted" (= wortgetreu) erfasst, freiere Zitate bis hin zu
+                  Paraphrasen hingegen werden als "quotation" (= paraphrasierend; anspielend;
+                  wiedergebend) erfasst. Ist im Brieftext die bibliographische Referenz gegeben,
+                  wird diese zusammen mit dem als "quoted" oder "quotation" zitierten Text
+                  zusätzlich gesamthaft als "citation" ausgezeichnet.</p>
+               <p>Zitate, die in den Vorlagen durch Anführungszeichen im Text gekennzeichnet sind,
+                  werden im erfassten Text durch Anführungs- und Schlusszeichen gekennzeichnet.</p>
+            </div2>
+            <div2>
+               <head>Hervorhebungen und Auszeichnungen</head>
+               <p>Hervorhebungen oder Auszeichnungen von Wörtern oder Textpassagen erfolgen in den
+                  Manuskripten unterschiedlich, zum Beispiel durch Unterstreichung, doppelte
+                  Unterstreichung, Sperrung, Kapitälchen bzw. Versalien, und Anführungszeichen im
+                  Text. Die Hervorhebungen und Auszeichnungen werden in der Transkription
+                  folgendermassen umgesetzt:</p>
+               <list rend="numbered">
+                  <item>Textteile, die in den Vorlagen durch Unterstreichung vom Absender
+                     gekennzeichnet worden sind, werden als unterstrichen erfasst.</item>
+                  <item>Falls Wörter im Text mehrfach unterstrichen werden, wird dies entsprechend
+                     ausgezeichnet.</item>
+                  <item>Hervorhebungen durch Kapitälchen oder Versalien werden als solche
+                     ausgezeichnet.</item>
+               </list>
+            </div2>
+            <div2>
+               <head>Kommentierung im Text</head>
+               <p>Der Nachweis von Personen, Werken, Orten, Briefen und Sachen erfolgt in der Regel
+                  durch die Verlinkung mit Einträgen in den jeweiligen Datenbanken. Die dabei
+                  benutzten Markups, IDs und Datenbanken sind im Folgenden angegeben.</p>
+               <div3>
+                  <head>Personen</head>
+                  <p>Personen werden mittels einer ID mit einem zentral in <ref
+                        target="https://beol.dasch.swiss/">BEOL</ref> erfassten Personeneintrag
+                     verlinkt. Als ID dient die von der <ref
+                        target="https://www.dnb.de/DE/Home/home_node.html">Deutschen
+                        Nationalbibliothek</ref> vergebene GND-Nummer. Zu Personen, die über keine
+                     GND-Nummer verfügen, wird, wo möglich, in enger Zusammenarbeit mit der <ref
+                        target="https://ub.unibas.ch/de/home/">UB Basel</ref> ein neuer GND-Eintrag
+                     erfasst.</p>
+                  <p>Nicht unmittelbar über Namensnennung im Text identifizierbare Personen (z.B.
+                     "fils" = Nicolaus II Bernoulli 1695-1726) werden durch Verlinkung mit dem
+                     entsprechenden biographischen Datenbankeintrag erschlossen.</p>
+               </div3>
+               <div3>
+                  <head>Institutionen</head>
+                  <p>Institutionen werden mittels ihrer ID, der von der <ref
+                        target="https://www.dnb.de/DE/Home/home_node.html">Deutschen
+                        Nationalbibliothek</ref> vergebenen GND-Nummer, ausgezeichnet. Zu
+                     Institutionen, die über keine GND-Nummer verfügen, wird künftig, wo möglich, in
+                     enger Zusammenarbeit mit der <ref target="https://ub.unibas.ch/de/home/">UB
+                        Basel</ref> ein neuer GND-Eintrag erfasst.</p>
+               </div3>
+               <div3>
+                  <head>Werke</head>
+                  <note>Abschnitt zu überarbeiten, sobald klar ist, wie wir die Daten auf BEOL
+                     importieren und referenzieren können. </note>
+                  <p>Werke werden mittels einer ID mit einem zentral in <ref
+                        target="https://beol.dasch.swiss/">BEOL</ref> erfassten bibliographischen
+                     Eintrag identifiziert.</p>
+               </div3>
+               <div3>
+                  <head>Briefe</head>
+                  <p>Im Brieftext erwähnte Briefe, die zu den Bernoulli-Briefwechseln gehören und im
+                     Bernoulli-Briefinventar entsprechend erfasst sind, werden über ihre
+                     Systemnummer referenziert.</p>
+                  <p>Briefe, die im Text erwähnt sind, von denen aber kein Textzeuge mehr erhalten
+                     ist, werden im Briefinventar als nachgewiesene Briefe erfasst und erhalten
+                     dadurch ebenfalls eine Systemnummer.</p>
+                  <p>Briefe, die nicht zur Bernoulli-Korrespondenz gehören, werden in einer Fussnote
+                     identifiziert und referenziert. Dies geschieht in der folgenden Form: Autor an
+                     Adressat von Jahr.Monat.Tag, Quellenangabe.</p>
+               </div3>
+               <div3>
+                  <head>Orte</head>
+                  <p>Im Brieftext erwähnte Orte werden mittels der GeoNames-ID identifiziert.</p>
+               </div3>
+            </div2>
+            <div2>
+               <head>Kommentierung in Fussnoten </head>
+               <p>Einige Kommentare können nicht mittels Tags durchgeführt werden und sollen in
+                  Fussnotenform erfolgen. Diese sind vor allem:</p>
+               <list rend="numbered">
+                  <item>Sachkommentare.</item>
+                  <item>Der Nachweis von Briefen, die nicht zu den Bernoulli-Briefwechseln
+                     gehören.</item>
+                  <item>Nachweise von Bibelstellen, die mittels der Angabe von Buch, Kapitel und
+                     Vers erfolgt. Nachweise von mittelalterlichen und klassischen Texten, die durch
+                     Angabe von Autor, Werk und Textstelle erfolgt.</item>
+                  <item>Erläuterungen zu wenig bekannten Eigennamen (Orte, Berge, Flüsse
+                     etc.).</item>
+                  <item>Worterklärungen (z. B. veralteter oder untergegangener Wörter), falls deren
+                     Bedeutung nicht aus dem Kontext ersichtlich ist.</item>
+               </list>
+            </div2>
+         </div1>
+
+      </body>
+   </text>
+</TEI>
+
