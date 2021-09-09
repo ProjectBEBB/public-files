@@ -1,5 +1,5 @@
 # Ignore Mac auto files
-*.DS_Store
+.DS_Store
 
 #Image auto files
 Thumbs.db
