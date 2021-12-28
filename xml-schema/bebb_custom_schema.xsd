@@ -282,13 +282,15 @@
     <!-- Paragraph -->
     <xs:element name="div">
         <xs:complexType>
-            <xs:choice>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:opener"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:pb"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:closer"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:postscript"/>
-            </xs:choice>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:pb"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:opener"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:closer"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:postscript"/>
+                </xs:choice>                
+            </xs:sequence>
             <xs:attribute fixed="letter" name="type" type="xs:string"/>
         </xs:complexType>
     </xs:element>
