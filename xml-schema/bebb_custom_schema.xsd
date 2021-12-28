@@ -161,7 +161,11 @@
     <!-- Date -->
     <xs:element name="date">
         <xs:complexType>
-            <xs:attribute name="when"/>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="when"/>
+                </xs:extension>
+            </xs:simpleContent>
         </xs:complexType>
     </xs:element>
 
@@ -267,20 +271,39 @@
         </xs:complexType>
     </xs:element>
     <xs:element name="head"/>
-    <xs:element name="body"> </xs:element>
+    <xs:element name="body">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:div"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
     <!-- Paragraph -->
+    <xs:element name="div">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:pb"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:opener"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:closer"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:postscript"/>
+            </xs:choice>
+            <xs:attribute fixed="letter" name="type" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="p"/>
 
     <!-- Note -->
-    <xs:element name="note"/>
+    <xs:element name="pb"/>
 
     <!-- TODO: add content restrictions to p tag -->
     <!-- TODO: add content restrictions to note tag -->
 
     <xs:element name="opener"/>
     <xs:element name="closer"/>
-    <xs:element name="pb"/>
     <xs:element name="postscript"/>
     <xs:element name="address"/>
+    <xs:element name="note"/>
+
 </xs:schema>
