@@ -285,6 +285,11 @@
 
     <xs:element name="div">
         <xs:complexType>
+            <xs:all>
+                <xs:element ref="tei:opener"/>
+                <xs:element ref="tei:p"/>
+                <xs:element ref="tei:closer"/>
+            </xs:all>
             <xs:attribute name="type"/>
         </xs:complexType>
     </xs:element>
@@ -293,4 +298,5 @@
     <!-- TODO: add content restrictions to note tag -->
 
     <xs:element name="opener"/>
+    <xs:element name="closer"/>
 </xs:schema>
