@@ -283,14 +283,6 @@
 
     <xs:element name="div">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element minOccurs="0" ref="tei:opener"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:pb"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
-                <xs:element minOccurs="0" ref="tei:closer"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:postscript"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:address"/>
-            </xs:sequence>
             <xs:attribute name="type"/>
         </xs:complexType>
     </xs:element>
