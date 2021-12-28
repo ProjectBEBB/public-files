@@ -271,41 +271,31 @@
         </xs:complexType>
     </xs:element>
     <xs:element name="head"/>
-    <xs:element name="body">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="tei:div"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="body"/>
 
     <!-- Paragraph -->
-    <xs:element name="div">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:choice>
-                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:pb"/>
-                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:p"/>
-                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:opener"/>
-                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:closer"/>
-                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:postscript"/>
-                </xs:choice>                
-            </xs:sequence>
-            <xs:attribute fixed="letter" name="type" type="xs:string"/>
-        </xs:complexType>
-    </xs:element>
     <xs:element name="p"/>
+    
+    <!-- TODO: add content restrictions to p tag -->
 
     <!-- Note -->
-    <xs:element name="pb"/>
-
-    <!-- TODO: add content restrictions to p tag -->
-    <!-- TODO: add content restrictions to note tag -->
-
-    <xs:element name="opener"/>
-    <xs:element name="closer"/>
-    <xs:element name="postscript"/>
-    <xs:element name="address"/>
     <xs:element name="note"/>
+    
+    <!-- TODO: add content restrictions to note tag -->
+    
+    <!-- Pagebeginning -->
+    <xs:element name="pb"/>
+    
+    <!-- Opener -->
+    <xs:element name="opener"/>
+    
+    <!-- Closer -->
+    <xs:element name="closer"/>
+    
+    <!-- Postscript -->
+    <xs:element name="postscript"/>
+    
+    <!-- Address -->
+    <xs:element name="address"/>
 
 </xs:schema>
