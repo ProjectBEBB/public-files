@@ -284,11 +284,11 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:choice>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:pb"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:opener"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:closer"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:postscript"/>
+                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:pb"/>
+                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:p"/>
+                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:opener"/>
+                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:closer"/>
+                    <xs:element maxOccurs="1" minOccurs="0" ref="tei:postscript"/>
                 </xs:choice>                
             </xs:sequence>
             <xs:attribute fixed="letter" name="type" type="xs:string"/>
