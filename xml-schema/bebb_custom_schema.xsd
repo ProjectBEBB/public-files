@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+
+    <!-- root element -->
+    <xs:element name="TEI">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:teiHeader"/>
+                <xs:element ref="tei:facsimile"/>
+                <xs:element ref="tei:text"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ********************   TEI Header   ************************ -->
+
+    <!-- TEI Header -->
+    <xs:element name="teiHeader">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:fileDesc"/>
+                <xs:element ref="tei:profileDesc"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- File Description -->
+    <xs:element name="fileDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:titleStmt"/>
+                <xs:element ref="tei:editionStmt"/>
+                <xs:element ref="tei:publicationStmt"/>
+                <xs:element ref="tei:sourceDesc"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Title Statement -->
+    <xs:element name="titleStmt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:title"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Title -->
+    <xs:element name="title">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:title"/>
+            </xs:sequence>
+            <xs:attribute name="type"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Publication Statement -->
+    <xs:element name="editionStmt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:edition"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="edition" type="xs:string"/>
+    <xs:element name="publicationStmt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:publisher"/>
+                <xs:element ref="tei:pubPlace"/>
+                <xs:element ref="tei:availability"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Source Description -->
+    <xs:element name="publisher" type="xs:string"/>
+    <xs:element name="pubPlace" type="xs:string"/>
+    <xs:element name="availability">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:licence"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="licence">
+        <xs:complexType mixed="true">
+            <xs:attribute name="target"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="sourceDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:msDesc"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Manuscript Description -->
+    <xs:element name="msDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:msIdentifier"/>
+                <xs:element ref="tei:history"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Manuscript Identifier -->
+    <xs:element name="msIdentifier">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:repository"/>
+                <xs:element ref="tei:altIdentifier"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Repository -->
+    <xs:element name="repository" type="xs:string"/>
+
+    <!-- Alternative Identifier -->
+    <xs:element name="altIdentifier">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:idno"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Identification Number, i.e. "BIBB Systemnummer" -->
+    <xs:element name="idno">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- Must be 9 digit number -->
+                <xs:pattern value="\d{9}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- History -->
+    <xs:element name="history">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:origin"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Origin -->
+    <xs:element name="origin">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Date -->
+    <xs:element name="date">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="when"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Profile Desciption -->
+    <xs:element name="profileDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:correspDesc"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Correspondence Description -->
+    <xs:element name="correspDesc">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:correspAction" minOccurs="2" maxOccurs="2"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Correspondence Action -->
+    <xs:element name="correspAction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:persName" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type">
+                <!-- attribute type is either "sent" or "recieved" -->
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="sent"/>
+                        <xs:enumeration value="recieved"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Person Name -->
+    <xs:element name="persName">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="key">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <!-- Matches either "no_GND" or a GND of type "(DE-588)117589136" -->
+                                <xs:pattern value="(\(DE-\d{3}\)\d{9})"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ********************   Facsimile   ************************ -->
+
+    <!-- Facsimiles -->
+    <xs:element name="facsimile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:graphic"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="graphic">
+        <xs:complexType>
+            <xs:attribute name="url" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ********************   Text   ************************ -->
+
+    <!-- Text -->
+    <xs:element name="text">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:front" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="tei:body"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Front -->
+    <xs:element name="front">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="tei:div1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Body -->
+    <xs:element name="div1">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:head"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
+            </xs:sequence>
+            <xs:attribute name="type"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="head"/>
+    <xs:element name="body"/>
+
+    <!-- Paragraph -->
+    <xs:element name="p"/>
+
+    <!-- TODO: add content restrictions to p tag -->
+
+    <!-- Note -->
+    <xs:element name="note"/>
+
+    <!-- TODO: add content restrictions to note tag -->
+
+    <!-- Pagebeginning -->
+    <xs:element name="pb"/>
+
+    <!-- Opener -->
+    <xs:element name="opener"/>
+
+    <!-- Closer -->
+    <xs:element name="closer"/>
+
+    <!-- Postscript -->
+    <xs:element name="postscript"/>
+
+    <!-- Address -->
+    <xs:element name="address"/>
+
+    <xs:element name="dateLine">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
