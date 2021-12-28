@@ -275,27 +275,34 @@
 
     <!-- Paragraph -->
     <xs:element name="p"/>
-    
+
     <!-- TODO: add content restrictions to p tag -->
 
     <!-- Note -->
     <xs:element name="note"/>
-    
+
     <!-- TODO: add content restrictions to note tag -->
-    
+
     <!-- Pagebeginning -->
     <xs:element name="pb"/>
-    
+
     <!-- Opener -->
     <xs:element name="opener"/>
-    
+
     <!-- Closer -->
     <xs:element name="closer"/>
-    
+
     <!-- Postscript -->
     <xs:element name="postscript"/>
-    
+
     <!-- Address -->
     <xs:element name="address"/>
 
+    <xs:element name="dateLine">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tei:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
