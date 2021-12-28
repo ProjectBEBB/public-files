@@ -267,25 +267,13 @@
         </xs:complexType>
     </xs:element>
     <xs:element name="head"/>
-    <xs:element name="body">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="1" ref="tei:div" minOccurs="1"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="body"> </xs:element>
 
     <!-- Paragraph -->
     <xs:element name="p"/>
 
     <!-- Note -->
     <xs:element name="note"/>
-
-    <xs:element name="div">
-        <xs:complexType>
-            <xs:attribute name="type"/>
-        </xs:complexType>
-    </xs:element>
 
     <!-- TODO: add content restrictions to p tag -->
     <!-- TODO: add content restrictions to note tag -->
