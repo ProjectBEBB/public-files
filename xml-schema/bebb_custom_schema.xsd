@@ -285,10 +285,6 @@
 
     <xs:element name="div">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
-                <xs:element ref="tei:opener"/>
-            </xs:sequence>
             <xs:attribute name="type"/>
         </xs:complexType>
     </xs:element>
