@@ -289,6 +289,7 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:p"/>
                 <xs:element minOccurs="0" ref="tei:closer"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:postscript"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="tei:address"/>
             </xs:sequence>
             <xs:attribute name="type"/>
         </xs:complexType>
@@ -301,4 +302,5 @@
     <xs:element name="closer"/>
     <xs:element name="pb"/>
     <xs:element name="postscript"/>
+    <xs:element name="address"/>
 </xs:schema>
